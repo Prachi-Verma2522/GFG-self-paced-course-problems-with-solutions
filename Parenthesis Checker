@@ -1,0 +1,30 @@
+
+// JAVA CODE
+class Solution
+{
+    public:
+    //Function to check if brackets are balanced or not.
+    bool ispar(string x)
+    {
+        // Your code here
+        stack<char> stk;
+        for(int i=0;i<x.length();i++){
+            if(x[i] == '(' or x[i] == '{' or x[i] == '[')
+                stk.push(x[i]);
+            else if(stk.empty()==true)
+                return false;
+            else if(x[i] == ')' and stk.top() != '(')
+                return false;
+            else if(x[i] == '}' and stk.top() != '{')
+                return false;
+            else if(x[i] == ']' and stk.top() != '[')
+                return false;
+            else
+                st.pop();
+        }
+        if(stk.empty())
+            return true;
+        return false;
+    }
+
+};
